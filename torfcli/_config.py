@@ -41,6 +41,7 @@ ARGUMENTS
     --webseed, -w WEBSEED  Webseed URL
     --private, -p          Forbid clients to use DHT and PEX
     --comment, -c COMMENT  Comment that is stored in TORRENT
+    --creator, -r CREATOR  Creator that is stored in TORRENT
     --date, -d DATE        Creation date as YYYY-MM-DD[ HH:MM[:SS]], 'now'
                            or 'today' (default: 'now')
     --source, -s SOURCE    Add "source" field
@@ -89,7 +90,7 @@ _cliparser.add_argument('--webseed', '-w', default=[], action='append')
 _cliparser.add_argument('--private', '-p', action='store_true')
 _cliparser.add_argument('--comment', '-c', default='')
 _cliparser.add_argument('--date', '-d', default='')
-_cliparser.add_argument('--creator', '-r', default='Swannie')
+_cliparser.add_argument('--creator', '-r', default='')
 _cliparser.add_argument('--source', '-s', default='')
 _cliparser.add_argument('--xseed', '-x', action='store_true')
 _cliparser.add_argument('--max-piece-size', default=0, type=float)

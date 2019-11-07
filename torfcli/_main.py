@@ -134,6 +134,9 @@ def _edit_mode(cfg):
     if cfg['nocreator']:
         torrent.created_by = None
 
+    if cfg['creator']:
+        torrent.created_by = cfg['creator']
+
     if cfg['nodate']:
         torrent.creation_date = None
     elif cfg['date']:
@@ -229,7 +232,7 @@ def _show_torrent_info(torrent, cfg):
     if torrent.is_ready:
         lines.append(('Info Hash', torrent.infohash))
     if human_readable:
-        size = lines.append(('Size', _util.bytes2string(torrent.size, include_bytes=True)))
+        size = lines.append(('Size', _util.bytes2string(torrent.size)))
     else:
         lines.append(('Size', torrent.size))
     if torrent.comment:

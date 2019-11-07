@@ -26,10 +26,9 @@ HELP_TEXT = f"""
 {_vars.__appname__} - {_vars.__description__}
 
 USAGE
-    {_vars.__appname__} PATH [OPTIONS] [-o TORRENT]         # Create torrent
-    {_vars.__appname__} -i TORRENT                          # Display torrent
-    {_vars.__appname__} -i TORRENT [OPTIONS] -o NEWTORRENT  # Edit torrent
-    {_vars.__appname__} PATH -i TORRENT                     # Verify torrent
+    {_vars.__appname__} PATH [OPTIONS] [-o TORRENT]
+    {_vars.__appname__} -i TORRENT
+    {_vars.__appname__} -i TORRENT [OPTIONS] -o NEW TORRENT
 
 ARGUMENTS
     PATH                   Path to torrent's content
@@ -90,6 +89,7 @@ _cliparser.add_argument('--webseed', '-w', default=[], action='append')
 _cliparser.add_argument('--private', '-p', action='store_true')
 _cliparser.add_argument('--comment', '-c', default='')
 _cliparser.add_argument('--date', '-d', default='')
+_cliparser.add_argument('--creator', '-r', default='Swannie')
 _cliparser.add_argument('--source', '-s', default='')
 _cliparser.add_argument('--xseed', '-x', action='store_true')
 _cliparser.add_argument('--max-piece-size', default=0, type=float)
